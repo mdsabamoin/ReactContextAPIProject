@@ -1,0 +1,45 @@
+/* Overlay background */
+.modal {
+    position: fixed; /* Fix the modal to the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(223, 213, 213, 0.5); /* Semi-transparent background */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure the modal is on top of other content */
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: white; /* White background for the modal */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    width: 400px; /* Fixed width for the modal */
+    max-width: 90%; /* Responsive: ensure it doesn't overflow on small screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    text-align: center; /* Center text inside the modal */
+  }
+  
+  /* Buttons styling */
+  button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for button hover */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  button:focus {
+    outline: none; /* Remove outline when button is clicked */
+  }
+  
