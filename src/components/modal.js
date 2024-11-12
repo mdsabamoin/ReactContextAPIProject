@@ -22,7 +22,7 @@ const Modal = (props) => {
     event.preventDefault();
     if (!ctx.Edit) {
       const obj = { "title": ctx.title, "url": ctx.url };
-      axios.post("https://crudcrud.com/api/e882953919ac42a2a7add7c4a0af151d/todo", obj)
+      axios.post("https://crudcrud.com/api/2aea4221b46c442d8056cf2d375466e1/todo", obj)
         .then((res) => ctx.setTitleUrl(previousState => [...previousState, res.data]))
         .catch((err) => console.log(err));
       ctx.setDisplay(false);
@@ -30,11 +30,13 @@ const Modal = (props) => {
       ctx.setTitle("");
       ctx.setUrl("");
     }else if(ctx.Edit){
-      const obj = { "title": ctx.title, "url": ctx.url };
-      axios.put(`https://crudcrud.com/api/e882953919ac42a2a7add7c4a0af151d/todo/${ctx.id}`, obj)
+      const obj = {"title": ctx.title, "url": ctx.url };
+      axios.put(`https://crudcrud.com/api/2aea4221b46c442d8056cf2d375466e1/todo/${ctx.id}`, obj)
         .then((res) => console.log("updated",res))
         .catch((err) => console.log("cant update",err));
-        ctx.TitleUrl[ctx.index] = obj;
+        const arr = [...ctx.TitleUrl];
+        arr[ctx.index] = {"_id":ctx.id,"title": ctx.title, "url": ctx.url };
+        ctx.setTitleUrl(arr);
       ctx.setEdit(false);
       ctx.setTitle("");
       ctx.setUrl("");

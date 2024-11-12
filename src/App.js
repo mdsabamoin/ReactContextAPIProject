@@ -10,7 +10,7 @@ function App() {
 
      const ctx = useContext(Context);
      useEffect(()=>{
-      axios.get("https://crudcrud.com/api/e882953919ac42a2a7add7c4a0af151d/todo")
+      axios.get("https://crudcrud.com/api/2aea4221b46c442d8056cf2d375466e1/todo")
       .then((res)=>ctx.setTitleUrl(res.data))
       .catch((err)=>console.log("data did not get",err));
      },[])
